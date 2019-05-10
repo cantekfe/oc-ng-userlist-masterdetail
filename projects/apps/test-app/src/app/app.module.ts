@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 console.log("app comp", AppComponent);
 import { HelloComponent } from './hello.component';
-import { ListModule } from '../../../../c-company-user-list/src/public_api';
+import { ListModule } from '../../../../c-user-list/src/public_api';
 @NgModule({
   imports: [
     BrowserModule,
