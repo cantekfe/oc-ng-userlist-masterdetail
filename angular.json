@@ -3,9 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "demo": {
+    "test-app": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "projects/apps/test-app/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -13,17 +13,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demo",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "dist/test-app",
+            "index": "projects/apps/test-app/src/index.html",
+            "main": "projects/apps/test-app/src/main.ts",
+            "polyfills": "projects/apps/test-app/src/polyfills.ts",
+            "tsConfig": "projects/apps/test-app/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/apps/test-app/src/favicon.ico",
+              "projects/apps/test-app/src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "projects/apps/test-app/src/styles.css"
             ],
             "scripts": []
           },
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "demo:build"
+            "browserTarget": "test-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "demo:build:production"
+              "browserTarget": "test-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "demo:build"
+            "browserTarget": "test-app:build"
           }
         },
         "test": {
@@ -94,7 +94,42 @@
           }
         }
       }
+    },
+    "c-user-list": {
+      "root": "projects/c-user-list",
+      "sourceRoot": "projects/c-user-list/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/c-user-list/tsconfig.lib.json",
+            "project": "projects/c-user-list/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/c-user-list/src/test.ts",
+            "tsConfig": "projects/c-user-list/tsconfig.spec.json",
+            "karmaConfig": "projects/c-user-list/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/c-user-list/tsconfig.lib.json",
+              "projects/c-user-list/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "demo"
+  "defaultProject": "test-app"
 }

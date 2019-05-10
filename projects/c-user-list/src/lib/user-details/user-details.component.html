@@ -1,0 +1,42 @@
+<mat-card *ngIf="isUserSelected" class="mat-elevation-z">
+
+	<mat-card-title>
+		<button (click)="returnBackToList()" mat-icon-button>
+			<mat-icon>arrow_back_ios</mat-icon>
+		</button>
+		<label class="back-header">Kullanıcı Detayları</label>
+	</mat-card-title>
+
+	<mat-card-content [style.display]="display_loading">
+		<img src="https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif" height="60">
+	</mat-card-content>
+<div *ngFor="let element of user?.details">
+	<mat-card-content [style.display]="display_view">
+		<form>
+			 <mat-form-field>
+				<input matInput placeholder="Name" [value]="user?.name" readonly>
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="Surname" [value]="user?.surname" readonly>
+			</mat-form-field> 
+
+			<mat-form-field >
+				<input matInput placeholder="Alarm" [value]="element.alarm" readonly>
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="Company" [value]="element.company" readonly>
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="Mail" [value]="element.mail" readonly>
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="Phone Number" [value]="element.phonenumber" readonly>
+			</mat-form-field>
+		</form>
+	</mat-card-content>
+</div>
+</mat-card>
