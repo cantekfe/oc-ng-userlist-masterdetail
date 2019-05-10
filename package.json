@@ -27,7 +27,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:lib:user-list": "npm run unlink:lib:user-list && npm run version:lib:user-list  && ng build c-user-list && npm run pack:lib:user-list && npm run publish:lib:user-list && npm run git:publish:lib:user-list",
+    "build:lib:user-list": " npm run unlink:lib:user-list &&npm run version:lib:user-list  && ng build c-user-list && npm run pack:lib:user-list && npm run publish:lib:user-list && npm run git:publish:lib:user-list",
     "unlink:lib:user-list": "cd dist/c-user-list  && npm unlink",
     "version:lib:user-list": "cd projects/c-user-list && npm --no-git-tag-version version patch -m \"Versiyon no: %s\"",
     "delete:lib:user-list": "echo silme && cd && cd dist && rmdir c-user-list /S /Q && cd",
