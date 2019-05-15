@@ -3,13 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CompanyListComponent } from './user-list/user-list.component';
-import { CompanyDetailsComponent } from './user-details/user-details.component';
-import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatTableModule ,MatIconModule,MatCardModule,MatButtonModule ,MatInputModule } from '@angular/material';
+import{ListModule} from '../../projects/c-user-list/src/lib/list.module'
 @NgModule({
   imports: [
    BrowserModule,
@@ -20,14 +18,11 @@ import {MatTableModule ,MatIconModule,MatCardModule,MatButtonModule ,MatInputMod
     MatIconModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule
-    
+    MatInputModule,
+    ListModule
   ],
   declarations: [
-    AppComponent,
-    CompanyListComponent,
-    CompanyDetailsComponent],
+    AppComponent],
   bootstrap: [AppComponent],
-  providers: [UserService]
 })
 export class AppModule { }
