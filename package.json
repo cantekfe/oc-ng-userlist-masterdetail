@@ -29,7 +29,7 @@
     "start": "ng serve",
     "_______________________________________________________________ PUBLISH ": "___________",
     "build":"npm run build:lib",
-    "build:lib": " npm run version:lib  && ng build c-user-list && npm run pack:lib && npm run publish:lib && npm run git:publish",
+    "build:lib": "npm run unlink:lib && npm run version:lib  && ng build c-user-list && npm run pack:lib && npm run publish:lib && npm run git:publish",
     "_______________________________________________________________ VERSIYONLAMA ": "___________",
     "unlink:lib": "cd dist/c-user-list  && npm unlink",
     "version:lib": "cd projects/c-user-list && npm --no-git-tag-version version patch -m \"Versiyon no: %s\"",
