@@ -1,11 +1,16 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { User } from '../models/user';
 import { trigger, style, transition, animate, state } from '@angular/animations';
-type PaneType = 'left' | 'right';
+import { ToolboxComponent } from '../toolbox-decorator';
 
+type PaneType = 'left' | 'right';
+ @ToolboxComponent({
+   desc: 'User List',
+   icon: 'fa fa-chart-bar',
+   componentName : 'UserListComponent'
+ })
 @Component({
-  selector: 'user-list',
+  selector: 'pack-user-list-container',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
   animations: [
@@ -16,7 +21,7 @@ type PaneType = 'left' | 'right';
     ])
   ]
 })
-export class CompanyListComponent {
+export class UserListComponent {
   isUserSelected = false;
   users = [];
   selectedUser: any;

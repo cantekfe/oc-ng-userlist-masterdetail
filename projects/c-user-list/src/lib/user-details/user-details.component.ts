@@ -1,14 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
-import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'user-details',
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.css']
 })
-export class CompanyDetailsComponent {
+export class UserDetailsComponent {
   user: User
   isUserSelected = false;
   //animation
@@ -40,7 +39,6 @@ export class CompanyDetailsComponent {
         this.display_view = 'block';
 
         this.user = c.find(a => a.id == this._userId);
-        console.log("user geldi :"+this.user);
       })
   }
 }

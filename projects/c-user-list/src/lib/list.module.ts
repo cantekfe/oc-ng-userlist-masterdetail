@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { CompanyListComponent } from './user-list/user-list.component';
-import { CompanyDetailsComponent } from './user-details/user-details.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,12 +21,12 @@ import {MatTableModule ,MatIconModule,MatCardModule,MatButtonModule ,MatInputMod
     MatInputModule
   ],
   declarations: [
-    CompanyListComponent,
-    CompanyDetailsComponent,
+    UserListComponent,
+    UserDetailsComponent,
     
   ],
   providers: [UserService],
-  exports: [CompanyListComponent]
+  exports: [UserListComponent]
   })
 
 export class ListModule { }

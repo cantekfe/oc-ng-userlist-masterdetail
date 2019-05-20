@@ -27,6 +27,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "_______________________________________________________________ PUBLISH ": "___________",
     "build":"npm run build:lib",
     "build:lib": " npm run version:lib  && ng build c-user-list && npm run pack:lib && npm run publish:lib && npm run git:publish",
     "_______________________________________________________________ VERSIYONLAMA ": "___________",
@@ -40,6 +41,7 @@
     "git:init": "git init && git remote add https://...... ",
     "git:commit": "git add . && git commit -m versiyonlandi",
     "git:push": "git push",
+    "_______________________________________________________________TEST ": "___________",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

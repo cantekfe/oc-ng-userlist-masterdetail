@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { find, first, filter, map } from 'rxjs/operators';
 import { User } from '../models/user';
 
 const users=[
